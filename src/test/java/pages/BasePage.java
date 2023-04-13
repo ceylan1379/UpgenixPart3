@@ -1,8 +1,6 @@
-package com.Upgenix.pages;
+package pages;
 
-import com.Upgenix.utilities.Driver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
+import Utilities.Driver;
 import org.openqa.selenium.support.PageFactory;
 
 public class BasePage {
