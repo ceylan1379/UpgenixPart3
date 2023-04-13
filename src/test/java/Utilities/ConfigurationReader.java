@@ -13,7 +13,7 @@ public class ConfigurationReader {
         try {
 
             //2- We need to open the file in java memory: FileInputStream
-            FileInputStream file = new FileInputStream("C:\\Users\\WİN10\\IdeaProjects\\EU10\\UpgenixPart3\\Configuration.properties");
+            FileInputStream file = new FileInputStream("C:\\Users\\buchi\\IdeaProjects\\UpgenixPart3\\Configuration.properties");
 
             //3- Load the properties object using FileInputStream object
             properties.load(file);

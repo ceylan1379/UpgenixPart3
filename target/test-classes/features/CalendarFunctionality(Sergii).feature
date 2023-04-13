@@ -1,7 +1,8 @@
-Feature: User should be able to use Calendar
+Feature: User as Posmanager should be able to use Calendar
 
   Scenario: "Wrong login/password" message should be displayed for invalid credentials
     Given  user is on the login page
+    And user logins
     When user clicks on Calendar
     Then user first lands on weekly display
     And user can change display between Day-Week-Month
