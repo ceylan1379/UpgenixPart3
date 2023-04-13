@@ -1,6 +1,6 @@
 Feature: User as Posmanager should be able to use Calendar
 
-  Scenario: "Wrong login/password" message should be displayed for invalid credentials
+  Scenario: Calendar functionality testing
     Given  user is on the login page
     And user logins
     When user clicks on Calendar
