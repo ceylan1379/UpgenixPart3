@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         },
 
         features ="src/test/resources/features",
-        glue ="src/test/java/Step_Definitions",
+        glue ="Step_Definitions",
         dryRun=false,
         tags = "@wip"
 )
