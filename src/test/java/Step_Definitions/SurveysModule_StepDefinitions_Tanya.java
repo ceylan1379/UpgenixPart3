@@ -24,11 +24,12 @@ public class SurveysModule_StepDefinitions_Tanya {
     }
     @When("user clicks Surveys module")
     public void user_clicks_surveys() {
+        wait.until(ExpectedConditions.elementToBeClickable(page.surveysModule));
         page.surveysModule.click();
     }
     @When("user clicks create")
     public void user_clicks_create() {
-        wait.until(ExpectedConditions.elementToBeClickable(page.createButton));
+
         page.createButton.click();
     }
     @Then("user should reach New Survey Form")
