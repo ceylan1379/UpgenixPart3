@@ -23,13 +23,13 @@ public class CalendarPageSergii extends BasePage{
     @FindBy(xpath = "//button[.='Month']")
     public WebElement monthDisplay;
 
-    @FindBy(xpath = "(//td[@class='fc-widget-content'])[10]")
+    @FindBy(xpath = "(//td[@class='fc-widget-content'])[13]")
     public WebElement createEventTimebox;
 
-    @FindBy(xpath = "//input[@class='o_input']")//"Event15" name
+    @FindBy(xpath = "//input[@class='o_input']")//"Event21" name
     public WebElement createEventName;
 
-    @FindBy(xpath = "//div[contains(text(), 'Event15')]")
+    @FindBy(xpath = "//div[contains(text(), 'Event21')]")
     public WebElement eventIconOnTimebox;
 
     @FindBy(xpath = "//span[.='Create']")
