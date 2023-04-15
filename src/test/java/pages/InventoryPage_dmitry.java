@@ -5,9 +5,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import Utilities.Driver;
 
-public class InventoryFunc_dmitry {
+public class InventoryPage_dmitry {
 
-    public InventoryFunc_dmitry(){
+    public InventoryPage_dmitry(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
