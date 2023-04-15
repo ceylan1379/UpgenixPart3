@@ -13,7 +13,25 @@ public class CalendarPage {
     }
 
     @FindBy(xpath = "//button[@class='o_calendar_button_week btn btn-sm btn-default active']")
-    public WebElement weekDisplayButton;
+    public WebElement weekDisplayButtonOn;
+
+    @FindBy(xpath = "//button[@class='o_calendar_button_day btn btn-sm btn-default']")
+    public WebElement dayDisplayButtonOff;
+
+    @FindBy(xpath = "//button[@class='o_calendar_button_week btn btn-sm btn-default']")
+    public WebElement weekDisplayButtonOff;
+
+
+    @FindBy(xpath = "//button[@class='o_calendar_button_day btn btn-sm btn-default active']")
+    public WebElement dayDisplayButtonOn;
+
+    @FindBy(xpath = "//button[@class='o_calendar_button_month btn btn-sm btn-default active']")
+    public WebElement monthDisplayButtonOn;
+
+    @FindBy(xpath = "//button[@class='o_calendar_button_month btn btn-sm btn-default']")
+    public WebElement monthDisplayButtonOff;
+
+
 
 
 }
