@@ -7,50 +7,49 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import pages.BasePage;
 import pages.CalendarPageSergii;
 
 import java.util.List;
 
 public class CalendarFunctionalitySergii {
 
-    CalendarPageSergii basePage = new CalendarPageSergii();
+    CalendarPageSergii calendarPage = new CalendarPageSergii();
     boolean check;
 
 
     @And("user logins")
     public void userLogins() {
 
-        basePage.loginFormControl.sendKeys("posmanager14@info.com");
-        basePage.passwordFormControl.sendKeys("posmanager");
-        basePage.login.click();
+        calendarPage.loginFormControl.sendKeys("posmanager100@info.com");
+        calendarPage.passwordFormControl.sendKeys("posmanager");
+        calendarPage.login.click();
     }
     @When("user clicks on Calendar")
     public void user_clicks_on_calendar() {
-        basePage.calendar.click();
+        calendarPage.calendar.click();
     }
 
     @Then("user first lands on weekly display")
     public void user_first_lands_on_weekly_display() {
-        check = basePage.weekDisplay.getAttribute("class").contains("active");
+        check = calendarPage.weekDisplay.getAttribute("class").contains("active");
         Assert.assertTrue(check);
     }
 
     @Then("user can change display between Day-Week-Month")
     public void user_can_change_display_between_day_week_month() {
         //TODO Assertions
-        basePage.monthDisplay.click();
-        Assert.assertTrue(true);
 
-        basePage.dayDisplay.click();
-        Assert.assertTrue(true);
+
+
+        calendarPage.monthDisplay.click();
+        WebElement checkMonth = Driver.getDriver().findElement(By.xpath("//button[@class='o_calendar_button_month btn btn-sm btn-default active']"));
+        Assert.assertTrue(checkMonth.isDisplayed());
+
+        calendarPage.dayDisplay.click();
+        WebElement checkDay = Driver.getDriver().findElement(By.xpath("//button[@class='o_calendar_button_day btn btn-sm btn-default active']"));
+
+        Assert.assertTrue(checkDay.isDisplayed());
 
     }
 
@@ -58,44 +57,34 @@ public class CalendarFunctionalitySergii {
     public void user_can_create_event_by_clicking_on_time_box_on_daily_display() {
 
 
-        //TODO Click callendar box
-        Wait<WebDriver> wait = new WebDriverWait(Driver.getDriver(), 10);
-
-
-        wait.until(ExpectedConditions.visibilityOf(basePage.createEventTimebox));
-
         BrowserUtils.waitFor(5);
-        JavascriptExecutor executor = (JavascriptExecutor) Driver.getDriver();
-        executor.executeScript("document.elementFromPoint(500, 500).click();");
-
-        basePage.createEventName.sendKeys("Event1");//Event1 a must
-        basePage.editBtn.click();
-        //Assert.assertTrue(basePage.eventIconOnTimebox.isDisplayed());
+        calendarPage.createEventTimebox.click();
+        calendarPage.createEventName.sendKeys("Event15");//Event15 a must
+        calendarPage.createBtn.click();
+        //Assert.assertTrue(calendarPage.eventIconOnTimebox.isDisplayed());
 
     }
 
     @Then("user can edit a created event")
     public void user_can_edit_a_created_event() {
-        basePage.eventIconOnTimebox.click();
-        basePage.editBtn.click();
+        calendarPage.eventIconOnTimebox.click();
+        calendarPage.editBtn.click();
 
-        //TODO Assert edit
-
-        //WebElement location = Driver.getDriver().findElement(By.xpath("//input[@name='location']"));
-        //location.sendKeys("Driverville");
-        basePage.saveBtn.click();
-        basePage.eventIconOnTimebox.click();
-
-        //Assert.assertEquals("Driverville", location.getText());
+        calendarPage.saveBtn.click();
+        calendarPage.eventIconOnTimebox.click();
 
     }
 
     @Then("user can delete a created event")
     public void user_can_delete_a_created_event() {
-       basePage.deleteBtn.click();
-       String xpath =  BrowserUtils.xpathFromElement(basePage.eventIconOnTimebox);
+       calendarPage.deleteBtn.click();
+       calendarPage.ok.click();
+       String xpath =  BrowserUtils.xpathFromElement(calendarPage.eventIconOnTimebox);
         System.out.println("xpath = " + xpath);
-        List<WebElement> elements = Driver.getDriver().findElements(By.xpath(xpath));
+        BrowserUtils.waitFor(2);
+        List<WebElement> elements = Driver.getDriver().findElements(By.xpath("//div[contains(text(), 'Event15')]"));// //div[contains(text(), 'Event15')]
+
+        BrowserUtils.waitFor(10);
         Assert.assertEquals(0, elements.size());
     }
 

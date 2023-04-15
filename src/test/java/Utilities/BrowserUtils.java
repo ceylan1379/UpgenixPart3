@@ -40,7 +40,7 @@ public class BrowserUtils{
         int startIndex = elementToString.indexOf(prefix) + prefix.length();
         int endIndex = elementToString.lastIndexOf(suffix);
 
-        String xpath = "\"" + elementToString.substring(startIndex, endIndex) + "]\"";
+        String xpath = "\"" + elementToString.substring(startIndex, endIndex) + "\"";
 
         return xpath;
     }
