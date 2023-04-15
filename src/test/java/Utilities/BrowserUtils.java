@@ -14,7 +14,37 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-public class BrowserUtils {
+public class BrowserUtils{
+
+/*
+    public static boolean isDisplayedElementXpath(WebElement element) {
+        String elementToString = element.toString();
+        String prefix = "xpath: ";
+        String suffix = "]";
+        int startIndex = elementToString.indexOf(prefix) + prefix.length();
+        int endIndex = elementToString.lastIndexOf(suffix);
+        if (startIndex >= endIndex) {
+            return false;
+        }
+        String xpath = "\"" + elementToString.substring(startIndex, endIndex) + "]\"";
+        System.out.println(xpath);
+        boolean result = Driver.getDriver().findElements(By.xpath("//*[@id='login']")).size() == 1;
+        return result;
+    }
+    */
+
+    public static String xpathFromElement(WebElement element) {
+        String elementToString = element.toString();
+        String prefix = "xpath: ";
+        String suffix = "]";
+        int startIndex = elementToString.indexOf(prefix) + prefix.length();
+        int endIndex = elementToString.lastIndexOf(suffix);
+
+        String xpath = "\"" + elementToString.substring(startIndex, endIndex) + "\"";
+
+        return xpath;
+    }
+
     public static void sleep(int second){
         /*
         This method will accept int (in seconds) and execute Thread.sleep
