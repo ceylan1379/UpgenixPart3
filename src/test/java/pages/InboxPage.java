@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class InboxPage {
 
-    public void InboxPage(){
+    public InboxPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
 

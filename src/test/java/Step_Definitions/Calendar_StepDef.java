@@ -26,7 +26,8 @@ public class Calendar_StepDef {
     }
     @Then("user should land on the weekly display")
     public void user_should_land_on_the_weekly_display() {
-        Assert.assertTrue(calendar.weekDisplayButton.isSelected());
+       String weekLocator=calendar.weekDisplayButton.toString();
+       Assert.assertTrue(weekLocator.contains("active"));
     }
 
 

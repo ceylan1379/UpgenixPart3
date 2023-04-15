@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
 
-    public void LoginPage(){
+    public LoginPage(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
     @FindBy(xpath = "//input[@id=\"login\"]")

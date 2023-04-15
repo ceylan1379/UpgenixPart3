@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class CalendarPage {
 
-    public void CalendarPage(){
+    public CalendarPage(){
 
         PageFactory.initElements(Driver.getDriver(),this);
     }
