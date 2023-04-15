@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class CalendarPage {
+public class CalendarPageAnthony {
 
-    public CalendarPage(){
+    public CalendarPageAnthony(){
 
         PageFactory.initElements(Driver.getDriver(),this);
     }
@@ -42,6 +42,28 @@ public class CalendarPage {
 
     @FindBy(xpath = "//div[contains(text(),'Event1')]")
     public WebElement timeBoxEvent;
+
+    @FindBy(xpath = "//button[@class='btn btn-sm btn-primary']")
+    public WebElement editButton;
+
+    @FindBy(xpath = "//input[@class='o_field_char o_field_widget o_input o_required_modifier']")
+    public WebElement editInputBox;
+
+    @FindBy(xpath = "//span[contains(text(),'Save')]")
+    public WebElement saveButton;
+
+    @FindBy(xpath = "//div[contains(text(),'Event12')]")
+    public WebElement editedInput;
+
+    @FindBy(xpath = "//span[contains(text(),'Delete')]")
+    public WebElement deleteButton;
+
+    @FindBy(xpath = "//span[contains(text(),'Ok')]")
+    public WebElement okButton;
+
+
+
+
 
 
 

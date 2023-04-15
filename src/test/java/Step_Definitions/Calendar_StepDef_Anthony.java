@@ -1,19 +1,24 @@
 package Step_Definitions;
 
 import Utilities.BrowserUtils;
+import Utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import pages.CalendarPage;
-import pages.InboxPage;
-import pages.LoginPage;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import pages.CalendarPageAnthony;
+import pages.InboxPageAnthony;
+import pages.LoginPageAnthony;
 
-public class Calendar_StepDef {
+import java.util.List;
 
-    LoginPage login = new LoginPage();
-    InboxPage inbox = new InboxPage();
-    CalendarPage calendar = new CalendarPage();
+public class Calendar_StepDef_Anthony {
+
+    LoginPageAnthony login = new LoginPageAnthony();
+    InboxPageAnthony inbox = new InboxPageAnthony();
+    CalendarPageAnthony calendar = new CalendarPageAnthony();
 
     @Given("user logs in with {string} and {string}")
     public void user_logs_in_with_and(String username, String password) {
@@ -67,24 +72,25 @@ public class Calendar_StepDef {
 
     @When("user clicks on an event")
     public void user_clicks_on_an_event() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+       calendar.timeBoxEvent.click();
     }
     @Then("user should be able to edit the event")
     public void user_should_be_able_to_edit_the_event() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        calendar.editButton.click();
+        calendar.editInputBox.sendKeys("2");
+        calendar.saveButton.click();
+        Assert.assertTrue(calendar.editedInput.getText().contains("Event12"));
     }
 
 
-    @When("clicks on an event")
-    public void clicks_on_an_event() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
     @Then("user should be able to delete that event")
     public void user_should_be_able_to_delete_that_event() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
+        calendar.deleteButton.click();
+        calendar.okButton.click();
+        List<WebElement> elements = Driver.getDriver().findElements(By.xpath("//div[contains(text(), 'Event15')]"));// //div[contains(text(), 'Event15')]
+
+        BrowserUtils.waitFor(10);
+        Assert.assertEquals(0, elements.size());
     }
 }

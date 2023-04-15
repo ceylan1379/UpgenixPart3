@@ -22,7 +22,7 @@ Feature: Calender
     And user clicks on a time box on the daily display
     Then user should be able to create an event
 
-  @UPG10-451
+  @UPG10-451 @wip
   Scenario: user can edit an event
     Given user is on the login page
     And user logs in with "posmanager24@info.com" and "posmanager"
@@ -30,10 +30,10 @@ Feature: Calender
     And user clicks on an event
     Then user should be able to edit the event
 
-  @UPG10-452
+  @UPG10-452 @wip
   Scenario: user can delete a created event
     Given user is on the login page
     And user logs in with "posmanager24@info.com" and "posmanager"
     When user goes to the calendar module
-    And clicks on an event
+    And user clicks on an event
     Then user should be able to delete that event
