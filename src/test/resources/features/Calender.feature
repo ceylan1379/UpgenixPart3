@@ -14,7 +14,7 @@ Feature: Calender
     When user goes to the calendar module
     Then user should be able to change display between day, week and month
 
-  @UPG10-450
+  @UPG10-450 @wip
   Scenario: user can create event by clicking on time box on daily display
     Given user is on the login page
     And user logs in with "posmanager24@info.com" and "posmanager"

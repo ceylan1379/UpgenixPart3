@@ -54,13 +54,14 @@ public class Calendar_StepDef {
 
     @When("user clicks on a time box on the daily display")
     public void user_clicks_on_a_time_box_on_the_daily_display() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        calendar.timeBox.click();
     }
     @Then("user should be able to create an event")
     public void user_should_be_able_to_create_an_event() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        calendar.summaryTextBox.sendKeys("Event1");
+        calendar.createButton.click();
+        Assert.assertTrue(calendar.timeBoxEvent.getText().contains("Event1"));
+
     }
 
 

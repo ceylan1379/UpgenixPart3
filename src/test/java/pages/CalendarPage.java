@@ -31,6 +31,18 @@ public class CalendarPage {
     @FindBy(xpath = "//button[@class='o_calendar_button_month btn btn-sm btn-default']")
     public WebElement monthDisplayButtonOff;
 
+    @FindBy(xpath = "(//td[@class='fc-widget-content'])[16]")
+    public WebElement timeBox;
+
+    @FindBy(xpath = "//input[@class='o_input']")
+    public WebElement summaryTextBox;
+
+    @FindBy(xpath = "//button[@class='btn btn-sm btn-primary']")
+    public WebElement createButton;
+
+    @FindBy(xpath = "//div[contains(text(),'Event1')]")
+    public WebElement timeBoxEvent;
+
 
 
 
