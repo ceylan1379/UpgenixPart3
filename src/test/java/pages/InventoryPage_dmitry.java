@@ -11,13 +11,7 @@ public class InventoryPage_dmitry {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(xpath = "//*[@id='login']")
-    public WebElement inputLogin;
-
-    @FindBy(xpath = "//*[@id='password']")
-    public WebElement inputPassword;
-
-    @FindBy(xpath = "//*[text() = 'Inventory']")
+    @FindBy(css = "a[data-menu='347'] span[class='oe_menu_text']")
     public WebElement spanInventory;
 
     @FindBy(css = "a[data-menu='378'] span[class='oe_menu_text']")
@@ -27,16 +21,22 @@ public class InventoryPage_dmitry {
     public WebElement buttonCreate;
     
     @FindBy(css = "button[class$='save']")
-    public WebElement buttonSave2;
+    public WebElement buttonSave;
+
+    @FindBy(className = "o_notification_title")
+    public WebElement errorMessage;
 
     @FindBy(xpath = "//input[@placeholder='Product Name']")
     public WebElement inputProduct;
 
-    @FindBy(xpath = "//input[@placeholder='Search...']")
+    @FindBy(css = "input[class='o_searchview_input']")
     public WebElement inputSearchBox;
 
-    @FindBy(xpath = "//*[text() = 'New Product Item']")
-    public WebElement spanNewProductItem;
+    @FindBy(xpath = "//div[contains(@class, 'oe_kanban_global_click')]")
+    public WebElement productRecords;
+
+    @FindBy(xpath = "//div[@class='o_facet_values']")
+    public WebElement divProducts;
 
 
 }
