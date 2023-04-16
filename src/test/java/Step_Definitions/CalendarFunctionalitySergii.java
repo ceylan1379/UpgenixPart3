@@ -15,7 +15,6 @@ import java.util.List;
 public class CalendarFunctionalitySergii {
 
     CalendarPageSergii calendarPage = new CalendarPageSergii();
-    boolean check;
 
 
     @And("user logins")
@@ -32,8 +31,8 @@ public class CalendarFunctionalitySergii {
 
     @Then("user first lands on weekly display")
     public void user_first_lands_on_weekly_display() {
-        check = calendarPage.weekDisplay.getAttribute("class").contains("active");
-        Assert.assertTrue(check);
+        WebElement checkWeek = Driver.getDriver().findElement(By.xpath("//button[@class='o_calendar_button_week btn btn-sm btn-default active']"));
+        Assert.assertTrue(checkWeek.isDisplayed());
     }
 
     @Then("user can change display between Day-Week-Month")
@@ -59,7 +58,7 @@ public class CalendarFunctionalitySergii {
 
         BrowserUtils.waitFor(5);
         calendarPage.createEventTimebox.click();
-        calendarPage.createEventName.sendKeys("Event15");//Event15 a must
+        calendarPage.createEventName.sendKeys("Event21");//Event21 a must
         calendarPage.createBtn.click();
         //Assert.assertTrue(calendarPage.eventIconOnTimebox.isDisplayed());
 
@@ -71,18 +70,19 @@ public class CalendarFunctionalitySergii {
         calendarPage.editBtn.click();
 
         calendarPage.saveBtn.click();
-        calendarPage.eventIconOnTimebox.click();
+        
 
     }
 
     @Then("user can delete a created event")
     public void user_can_delete_a_created_event() {
+       calendarPage.eventIconOnTimebox.click();
        calendarPage.deleteBtn.click();
        calendarPage.ok.click();
        String xpath =  BrowserUtils.xpathFromElement(calendarPage.eventIconOnTimebox);
         System.out.println("xpath = " + xpath);
         BrowserUtils.waitFor(2);
-        List<WebElement> elements = Driver.getDriver().findElements(By.xpath("//div[contains(text(), 'Event15')]"));// //div[contains(text(), 'Event15')]
+        List<WebElement> elements = Driver.getDriver().findElements(By.xpath("//div[contains(text(), 'Event21')]"));// //div[contains(text(), 'Event21')]
 
         BrowserUtils.waitFor(10);
         Assert.assertEquals(0, elements.size());
