@@ -1,5 +1,6 @@
 @Calendar
-Feature: User as Posmanager should be able to use Calendar
+
+`Feature: User as Posmanager should be able to use Calendar
 
 Background:
   Given  user is on the login page

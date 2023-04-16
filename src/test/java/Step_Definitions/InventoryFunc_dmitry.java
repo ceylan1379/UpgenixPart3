@@ -48,6 +48,8 @@ public class InventoryFunc_dmitry {
     @And("user choose Products from the Master Data menu")
     public void userChooseProductsFromTheMasterDataMenu() {
 
+        wait.until(ExpectedConditions.visibilityOf(pageIventory.spanProducts));
+
         pageIventory.spanProducts.click();
 
     }
@@ -79,6 +81,8 @@ public class InventoryFunc_dmitry {
 
     @Then("error message {string} is appeared")
     public void errorMessageIsAppeared(String expErrorMessage) {
+
+        wait.until(ExpectedConditions.visibilityOf(pageIventory.errorMessage));
 
         String actualErrorMessage = pageIventory.errorMessage.getText();
 
