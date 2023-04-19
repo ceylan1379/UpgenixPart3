@@ -28,7 +28,7 @@ public class InventoryFunc_dmitry {
     @Given("user is logged in as {string} with password {string} on the UPGENIX Inbox page")
     public void userIsLoggedInAsWithPasswordOnTheUPGENIXInboxPage(String username, String password) {
 
-        String url = ConfigurationReader.getProperty("webLoginPage");
+        String url = ConfigurationReader.getProperty("url");
         Driver.getDriver().get(url);
 
         loginPageDmitry.inputLogin.sendKeys(username);
