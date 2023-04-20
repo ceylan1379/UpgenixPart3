@@ -25,7 +25,7 @@ public class InventoryFunc_dmitry {
 
     WebDriverWait wait = new WebDriverWait(driver, 10);
 
-    @Given("user is logged in as {string} with password {string} on the UPGENIX Inbox page")
+    @Given("userD is logged in as {string} with password {string} on the UPGENIX Inbox page")
     public void userIsLoggedInAsWithPasswordOnTheUPGENIXInboxPage(String username, String password) {
 
         String url = ConfigurationReader.getProperty("url");
@@ -38,14 +38,14 @@ public class InventoryFunc_dmitry {
     }
 
 
-    @When("user clicks on Inventory menu item")
+    @When("userD clicks on Inventory menu item")
     public void userClicksOnInventoryMenuItem() {
 
         pageIventory.spanInventory.click();
 
     }
 
-    @And("user choose Products from the Master Data menu")
+    @And("userD choose Products from the Master Data menu")
     public void userChooseProductsFromTheMasterDataMenu() {
 
         wait.until(ExpectedConditions.visibilityOf(pageIventory.spanProducts));
@@ -55,14 +55,14 @@ public class InventoryFunc_dmitry {
     }
 
 
-    @And("user push button Create")
+    @And("userD push button Create")
     public void userPushButtonCreate() {
 
         pageIventory.buttonCreate.click();
 
     }
 
-    @Then("user is on the Products New page")
+    @Then("userD is on the Products New page")
     public void userIsOnTheProductsNewPage() {
 
         String expectedTitle = "Products - Odoo";
@@ -72,14 +72,14 @@ public class InventoryFunc_dmitry {
 
     }
 
-    @And("user leaves Product Name field blank and clicks on the Save button")
+    @And("userD leaves Product Name field blank and clicks on the Save button")
     public void userLeavesProductNameFieldBlankAndClicksOnTheSaveButton() {
 
         pageIventory.buttonSave.click();
 
     }
 
-    @Then("error message {string} is appeared")
+    @Then("errorD message {string} is appeared")
     public void errorMessageIsAppeared(String expErrorMessage) {
 
         wait.until(ExpectedConditions.visibilityOf(pageIventory.errorMessage));
@@ -90,7 +90,7 @@ public class InventoryFunc_dmitry {
 
     }
 
-    @And("input box Product Name bordered in red color")
+    @And("inputD box Product Name bordered in red color")
     public void inputBoxProductNameBorderedInRedColor() {
 
         String rgbaExpected = "rgba(217, 83, 79, 1)";
@@ -99,21 +99,21 @@ public class InventoryFunc_dmitry {
         Assert.assertEquals(rgbaExpected, rgbaActual);
     }
 
-    @And("put the name of the product: {string} in the product name input box")
+    @And("putD the name of the product: {string} in the product name input box")
     public void putTheNameOfTheProductInTheProductNameInputBox(String productName) {
 
         pageIventory.inputProduct.sendKeys(productName);
 
     }
 
-    @And("user clicks on the Save button")
+    @And("userD clicks on the Save button")
     public void userClicksOnTheSaveButton() {
 
         pageIventory.buttonSave.click();
 
     }
 
-    @Then("page title includes entered product name: {string}")
+    @Then("pageD title includes entered product name: {string}")
     public void pageTitleIncludesEnteredProductName(String productName) {
 
         String expectedTitle = productName + " - Odoo";
@@ -126,7 +126,7 @@ public class InventoryFunc_dmitry {
 
     }
 
-    @When("user enters {string} in the search box and push Enter")
+    @When("userD enters {string} in the search box and push Enter")
     public void userEntersInTheSearchBoxAndPushEnter(String productName) {
 
         wait.until(ExpectedConditions.visibilityOf(pageIventory.divProducts));
@@ -135,7 +135,7 @@ public class InventoryFunc_dmitry {
 
     }
 
-    @Then("user see that created product is listed")
+    @Then("userD see that created product is listed")
     public void userSeeThatCreatedProductIsListed() {
 
         String expectedProductTitle = "Test Product Item";
