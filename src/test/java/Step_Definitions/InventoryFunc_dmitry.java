@@ -28,7 +28,7 @@ public class InventoryFunc_dmitry {
     @Given("user is logged in as {string} with password {string} on the UPGENIX Inbox page")
     public void userIsLoggedInAsWithPasswordOnTheUPGENIXInboxPage(String username, String password) {
 
-        String url = ConfigurationReader.getProperty("webLoginPage");
+        String url = ConfigurationReader.getProperty("url");
         Driver.getDriver().get(url);
 
         loginPageDmitry.inputLogin.sendKeys(username);
@@ -47,6 +47,8 @@ public class InventoryFunc_dmitry {
 
     @And("user choose Products from the Master Data menu")
     public void userChooseProductsFromTheMasterDataMenu() {
+
+        wait.until(ExpectedConditions.visibilityOf(pageIventory.spanProducts));
 
         pageIventory.spanProducts.click();
 
@@ -79,6 +81,8 @@ public class InventoryFunc_dmitry {
 
     @Then("error message {string} is appeared")
     public void errorMessageIsAppeared(String expErrorMessage) {
+
+        wait.until(ExpectedConditions.visibilityOf(pageIventory.errorMessage));
 
         String actualErrorMessage = pageIventory.errorMessage.getText();
 
