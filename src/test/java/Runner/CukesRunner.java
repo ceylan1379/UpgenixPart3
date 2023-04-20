@@ -16,7 +16,7 @@ import org.junit.runner.RunWith;
         features ="src/test/resources/features",
         glue ="Step_Definitions",
         dryRun=false,
-        tags = "@Calendar"
+        tags = "@UPG10-440"
 )
 public class CukesRunner {
 }
