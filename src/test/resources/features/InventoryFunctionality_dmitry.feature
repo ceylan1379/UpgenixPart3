@@ -28,13 +28,13 @@ Feature: UPGENIX Inventory Functionality feature
     When User clicks on Inventory menu item
     And User choose Products from the Master Data menu
     When User push button Create
-    And putD the name of the product: "Test Product Item" in the product name input box
-    And userD clicks on the Save button
-    Then pageD title includes entered product name: "Test Product Item"
+    And put name of the product: "Test Product Item" in the product name input box
+    And User clicks on the Save button
+    Then page title would includes entered product name: "Test Product Item"
 
   @UPG10-480 @inventory
   Scenario: Verify that the user should be able to see created Product is listed after clicking the Products module.
     When User clicks on Inventory menu item
     And User choose Products from the Master Data menu
-    When userD enters "Test Product Item" in the search box and push Enter
-    Then userD see that created product is listed
+    When User enters "Test Product Item" in the search box and push Enter
+    Then User see that created product is listed

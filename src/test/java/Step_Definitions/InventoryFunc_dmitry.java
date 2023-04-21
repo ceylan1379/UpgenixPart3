@@ -99,21 +99,21 @@ public class InventoryFunc_dmitry {
         Assert.assertEquals(rgbaExpected, rgbaActual);
     }
 
-    @And("putD the name of the product: {string} in the product name input box")
+    @And("put name of the product: {string} in the product name input box")
     public void putTheNameOfTheProductInTheProductNameInputBox(String productName) {
 
         pageIventory.inputProduct.sendKeys(productName);
 
     }
 
-    @And("userD clicks on the Save button")
+    @And("User clicks on the Save button")
     public void userClicksOnTheSaveButton() {
 
         pageIventory.buttonSave.click();
 
     }
 
-    @Then("pageD title includes entered product name: {string}")
+    @Then("page title would includes entered product name: {string}")
     public void pageTitleIncludesEnteredProductName(String productName) {
 
         String expectedTitle = productName + " - Odoo";
@@ -126,7 +126,7 @@ public class InventoryFunc_dmitry {
 
     }
 
-    @When("userD enters {string} in the search box and push Enter")
+    @When("User enters {string} in the search box and push Enter")
     public void userEntersInTheSearchBoxAndPushEnter(String productName) {
 
         wait.until(ExpectedConditions.visibilityOf(pageIventory.divProducts));
@@ -135,7 +135,7 @@ public class InventoryFunc_dmitry {
 
     }
 
-    @Then("userD see that created product is listed")
+    @Then("User see that created product is listed")
     public void userSeeThatCreatedProductIsListed() {
 
         String expectedProductTitle = "Test Product Item";
