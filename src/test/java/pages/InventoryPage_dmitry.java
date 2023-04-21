@@ -19,7 +19,7 @@ public class InventoryPage_dmitry {
 
     @FindBy(css = "button[class$='btn-default']")
     public WebElement buttonCreate;
-    
+
     @FindBy(css = "button[class$='save']")
     public WebElement buttonSave;
 
