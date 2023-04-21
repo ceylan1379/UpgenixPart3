@@ -10,7 +10,7 @@ public class EmployeesPageCeylan {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(name = "username")
+    @FindBy(name = "login")
     public WebElement usernameInput;
 
     @FindBy(name = "password")
@@ -22,4 +22,18 @@ public class EmployeesPageCeylan {
     public WebElement clickEmployeesModule;
     @FindBy(xpath = "//button[@accesskey='c']")
     public WebElement clickCreateButton;
+
+    @FindBy(xpath = "//button[@accesskey='s']")
+    public WebElement saveButton;
+
+    @FindBy(xpath = "//div[@class='o_notification_title']")
+    public WebElement errorMessage;
+
+    @FindBy(id = "o_field_input_619")
+    public WebElement employeesName;
+
+    @FindBy(xpath = "//div[@class='o_thread_message_content']/p")
+    public WebElement createdMessage;
+    @FindBy(xpath = "//button[@aria-label='list']")
+    public WebElement clickListButton;
 }
