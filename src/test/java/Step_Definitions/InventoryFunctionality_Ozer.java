@@ -28,7 +28,8 @@ public class InventoryFunctionality_Ozer {
     @Given("user is logged in as {string} with password {string} on the UPGENIX Inbox page")
     public void userIsLoggedInAsWithPasswordOnTheUPGENIXInboxPage(String username, String password) {
 
-        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+        String url = ConfigurationReader.getProperty("webLoginPage");
+        Driver.getDriver().get(url);
 
         loginPageOzer.inputLogin.sendKeys(username);
         loginPageOzer.inputPassword.sendKeys(password);
@@ -70,7 +71,7 @@ public class InventoryFunctionality_Ozer {
     }
 
     @And("user leaves Product Name field blank and clicks on the Save button")
-    public void productNameFieldBlankAndClicksOnTheSaveButton() {
+    public void userLeavesProductNameFieldBlankAndClicksOnTheSaveButton() {
 
         inventoryPageOzer.buttonSave.click();
 
