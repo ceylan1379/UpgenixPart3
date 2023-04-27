@@ -11,7 +11,7 @@ public class UpgenixLogInPageDima {
     }
 
     @FindBy(xpath = "//input[@name='login']")
-    public WebElement emailInput;
+    public WebElement emailInput ;
 
     @FindBy(name = "password")
     public WebElement passwordInput;
