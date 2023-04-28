@@ -1,4 +1,4 @@
-@smoke @inventory @UPG10-422
+@smoke  @UPG10-486
 Feature: UPGENIX Inventory Functionality feature
 
 #AC 1. Verify that User can reach New Products Form by clicking Inventory --> Products --> Create
@@ -14,14 +14,14 @@ Background: for the scenario for this feature file, user is expected to be logge
 the user home page (Inbox)
 Given user is logged in as "posmanager75@info.com" with password "posmanager" on the UPGENIX Inbox page
 
-  @UPG10-468
+  @UPG10-487
   Scenario: Verify that User can reach New Products Form by clicking Inventory --> Products --> Create
     When user clicks on Inventory menu item
     And user choose Products from the Master Data menu
     And user push button Create
     Then user is on the Products New page
 
-  @UPG10-469
+  @UPG10-488
   Scenario: Verify that if Product name field leaves blank, an error message "The following fields are invalid:"
   is appeared and Product Name input box is bordered in red color.
     When user clicks on Inventory menu item
@@ -31,7 +31,7 @@ Given user is logged in as "posmanager75@info.com" with password "posmanager" on
     Then error message "The following fields are invalid:" is appeared
     And input box Product Name bordered in red color
 
-  @UPG10-470
+  @UPG10-489
   Scenario: Verify that after creating a Product, the page title includes the Product name.
     When user clicks on Inventory menu item
     And user choose Products from the Master Data menu
@@ -40,7 +40,7 @@ Given user is logged in as "posmanager75@info.com" with password "posmanager" on
     And user clicks on the Save button
     Then page title includes entered product name: "Test Product Item"
 
-  @UPG10-471
+  @UPG10-490
   Scenario: Verify that the user should be able to see created Product is listed after clicking the Products module.
     When user clicks on Inventory menu item
     And user choose Products from the Master Data menu
